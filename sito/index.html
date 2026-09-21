@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RDC Solutions — Supporto tecnologico e automazioni, Roma</title>
+<meta name="description" content="Risolvo i problemi tecnologici che fanno perdere tempo e clienti, e automatizzo quelli che tornano ogni mese. Audit digitale 250 €. Roma, a domicilio e da remoto.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="RDC Solutions — Supporto tecnologico e automazioni, Roma">
+<meta property="og:description" content="Dominio, Google, backup, operazioni rifatte a mano ogni mese. Audit digitale 250 €, 90 minuti, relazione scritta in 3 giorni lavorativi.">
+<meta property="og:locale" content="it_IT">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://rdcsolutions.tech/">
+<meta property="og:url" content="https://rdcsolutions.tech/">
+<script src="animazioni.js"></script>
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F4F7F6;
+    --bg-caldo:#FBF7EC;     /* fondo verticale: strutture */
+    --ink:#0E1A1C;
+    --muted:#4F5D5B;
+    --line:#DDE5E3;
+    --accent:#0B5750;
+    --accent-strong:#073F3A;
+    --accent-soft:#E3EFEC;
+    --ocra:#8A6A00;
+    --giallo:#F0C63C;
+    --barra-alta:4.25rem;
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:18px;line-height:1.6;padding-bottom:5.5rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (min-width:56rem){ body{padding-bottom:0} }
+  img{max-width:100%;height:auto;display:block}
+
+  /* ---------- impianto ---------- */
+  .wrap{padding:0 1.25rem;max-width:74rem;margin:0 auto}
+  @media (min-width:48rem){ .wrap{padding:0 2rem} }
+  section{padding:4.5rem 0;scroll-margin-top:var(--barra-alta)}
+  @media (min-width:56rem){ section{padding:7rem 0} }
+  h1,h2,h3{line-height:1.08;margin:0 0 .75rem;font-weight:750;letter-spacing:-0.03em}
+  h1{font-size:clamp(2.3rem,6.2vw,4.1rem);letter-spacing:-0.04em}
+  h2{font-size:clamp(1.85rem,4.2vw,2.9rem)}
+  h3{font-size:1.2rem;line-height:1.25;letter-spacing:-0.015em}
+  p{margin:0 0 1rem}
+  .lead{font-size:1.15rem;color:var(--muted);max-width:36rem}
+  @media (min-width:56rem){ .lead{font-size:1.25rem} }
+  .small{font-size:.92rem;color:var(--muted)}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--accent-strong)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .scuro :focus-visible,.audit :focus-visible{outline-color:var(--giallo)}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--giallo);color:var(--ink);padding:.7rem 1rem;z-index:60;font-weight:700}
+  .skip:focus{left:0}
+
+  .duo{display:grid;gap:2.5rem}
+  @media (min-width:56rem){
+    .duo{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4.5rem;align-items:start}
+    .duo .fisso{position:sticky;top:calc(var(--barra-alta) + 2rem)}
+  }
+
+  /* ---------- barra superiore ---------- */
+  .barra-alta{
+    position:sticky;top:0;z-index:30;height:var(--barra-alta);
+    display:flex;align-items:center;
+    background:rgba(255,255,255,.86);
+    -webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .barra-alta .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%}
+  .marchio{display:flex;align-items:center;gap:.6rem;font-weight:750;letter-spacing:-0.02em;font-size:1.08rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .marchio:hover{color:var(--ink)}
+  .logo{flex:none;width:2.1rem;height:2.1rem;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.05rem;letter-spacing:-0.04em;position:relative;overflow:hidden}
+  .logo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--giallo)}
+  .barra-alta nav{display:none;gap:2rem;font-size:.95rem}
+  .barra-alta nav a{color:var(--muted);text-decoration:none}
+  .barra-alta nav a:hover{color:var(--ink)}
+  .barra-alta .btn{padding:.6rem 1.1rem;font-size:.95rem}
+  .barra-alta .btn-wa{display:none}
+  @media (min-width:56rem){ .barra-alta nav{display:flex} .barra-alta .btn-wa{display:inline-flex} }
+
+  /* ---------- bottoni ---------- */
+  .azioni{display:flex;flex-direction:column;gap:.75rem;margin:2rem 0 0}
+  @media (min-width:34rem){ .azioni{flex-direction:row;flex-wrap:wrap;align-items:center} }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+    padding:1rem 1.6rem;font-size:1.03rem;font-weight:650;letter-spacing:-0.01em;
+    text-decoration:none;border-radius:999px;border:1.5px solid transparent;
+    transition:background-color .2s,color .2s,border-color .2s,transform .2s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-wa{background:var(--accent);color:#fff;box-shadow:0 8px 20px -10px rgba(11,87,80,.7)}
+  .btn-wa:hover{background:var(--accent-strong);color:#fff}
+  .btn-tel{background:#fff;color:var(--ink);border-color:var(--line)}
+  .btn-tel:hover{border-color:var(--ink);color:var(--ink)}
+  .btn-giallo{background:var(--giallo);color:var(--ink)}
+  .btn-giallo:hover{background:#FFD65A;color:var(--ink)}
+  .btn-chiaro{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+  .btn-chiaro:hover{border-color:#fff;color:#fff}
+  .btn svg{flex:none}
+
+  /* ---------- testata ---------- */
+  .hero{
+    padding:3rem 0 4rem;overflow:hidden;
+    background:
+      radial-gradient(60rem 30rem at 85% -10%,var(--accent-soft),transparent 70%),
+      radial-gradient(30rem 20rem at -10% 110%,#FBF3D6,transparent 70%);
+  }
+  @media (min-width:56rem){ .hero{padding:5.5rem 0 6.5rem} }
+  .hero-grid{display:grid;gap:3rem}
+  @media (min-width:60rem){ .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:4rem;align-items:center} }
+  .pillola{
+    display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.5rem;
+    padding:.4rem .9rem .4rem .7rem;border-radius:999px;background:#fff;border:1px solid var(--line);
+    font-size:.92rem;font-weight:600;color:var(--ink);
+  }
+  .pillola::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .hero h1 .ev{color:var(--accent)}
+  .hero .lead{color:var(--ink);opacity:.8}
+
+  .fatti{list-style:none;padding:0;margin:3rem 0 0;display:grid;grid-template-columns:repeat(3,auto);gap:1.5rem;justify-content:start;border-top:1px solid var(--line);padding-top:1.5rem}
+  @media (min-width:34rem){ .fatti{gap:2.75rem} }
+  .fatti b{display:block;font-size:1.6rem;font-weight:750;letter-spacing:-0.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+  .fatti span{font-size:.88rem;color:var(--muted);line-height:1.35;display:block;margin-top:.2rem}
+
+  /* cornice browser per gli screenshot */
+  .browser{
+    border-radius:14px;background:#fff;border:1px solid var(--line);overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(14,26,28,.35),0 10px 20px -12px rgba(14,26,28,.15);
+  }
+  .browser-barra{display:flex;align-items:center;gap:.4rem;padding:.6rem .8rem;border-bottom:1px solid var(--line);background:#F7F9F8}
+  .browser-barra i{width:.6rem;height:.6rem;border-radius:50%;background:#D5DDDB}
+  .browser-barra span{margin-left:.6rem;flex:1;font-size:.78rem;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.15rem .75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .browser img{aspect-ratio:16/9;object-fit:cover;width:100%}
+  a.browser{display:block;text-decoration:none;transition:transform .3s}
+  a.browser:hover{transform:translateY(-3px)}
+
+  .hero-vetrina{position:relative}
+  .hero-vetrina .browser{transform:rotate(1.2deg)}
+  .scheda-audit{
+    position:relative;margin:-2.25rem 0 0 1rem;max-width:19rem;
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem;
+    box-shadow:0 20px 40px -20px rgba(14,26,28,.35);
+  }
+  @media (min-width:60rem){ .scheda-audit{position:absolute;left:-2.5rem;bottom:-2.5rem;margin:0} }
+  .scheda-audit p{margin:0;font-size:.9rem;color:var(--muted);line-height:1.4}
+  .scheda-audit strong{display:block;color:var(--ink);font-size:1.05rem;margin-bottom:.15rem}
+  .didascalia{font-size:.88rem;color:var(--muted);margin:.9rem 0 0}
+  @media (min-width:60rem){ .didascalia{text-align:right} }
+
+  /* ---------- problemi ---------- */
+  ol.problemi{list-style:none;margin:0;padding:0;counter-reset:p;display:grid;gap:.75rem}
+  ol.problemi li{
+    counter-increment:p;position:relative;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:1.1rem 1.25rem 1.1rem 4rem;font-size:1.04rem;line-height:1.5;
+  }
+  ol.problemi li::before{
+    content:counter(p);position:absolute;left:1.1rem;top:1rem;
+    width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;
+    background:var(--accent-soft);color:var(--accent);font-size:.9rem;font-weight:750;
+  }
+  .strutture ol.problemi li::before{background:#F4E9C4;color:var(--ocra)}
+  .chiusura{margin-top:1.75rem;font-weight:650;font-size:1.1rem;max-width:30rem;letter-spacing:-0.01em}
+  .fondo-soft{background:var(--bg-soft)}
+
+  /* ---------- audit ---------- */
+  .audit{background:var(--accent);color:#fff;position:relative;overflow:hidden}
+  .audit::before{content:"";position:absolute;right:-12rem;top:-12rem;width:32rem;height:32rem;border-radius:50%;background:rgba(255,255,255,.05)}
+  .audit .wrap{position:relative}
+  .audit .lead{color:rgba(255,255,255,.82)}
+  .audit a:not(.btn){color:var(--giallo)}
+  .audit .small{color:rgba(255,255,255,.75)}
+  .prezzo-grande{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin:1.5rem 0 .4rem}
+  .prezzo-grande .cifra{font-size:5rem;font-weight:800;line-height:.9;letter-spacing:-0.05em;color:var(--giallo);font-variant-numeric:tabular-nums}
+  @media (min-width:48rem){ .prezzo-grande .cifra{font-size:6.5rem} }
+  .prezzo-grande .val{font-size:1.3rem;font-weight:650}
+  .pannello{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:1.5rem}
+  @media (min-width:48rem){ .pannello{padding:2rem} }
+  .pannello + .pannello{margin-top:1rem}
+  .pannello.chiaro{background:#fff;color:var(--ink);border-color:#fff}
+  .spunte{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.85rem}
+  .spunte li{position:relative;padding-left:2.1rem;line-height:1.5}
+  .spunte li::before{
+    content:"";position:absolute;left:0;top:.15rem;width:1.35rem;height:1.35rem;border-radius:50%;
+    background:var(--giallo) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E1A1C' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/.8rem no-repeat;
+  }
+  .spunte.verdi li::before{background-color:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B5750' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E")}
+  .pannello.chiaro p{color:var(--ink)}
+
+  /* ---------- listino ---------- */
+  .testa{max-width:42rem;margin-bottom:3rem}
+  .listino{display:grid;gap:1rem}
+  @media (min-width:40rem){ .listino{grid-template-columns:repeat(2,1fr)} }
+  @media (min-width:64rem){ .listino{grid-template-columns:repeat(3,1fr)} }
+  .voce{
+    border:1px solid var(--line);border-radius:var(--r);padding:1.5rem;background:#fff;
+    display:flex;flex-direction:column;transition:border-color .2s,transform .2s;
+  }
+  .voce:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .voce h3{margin:0 0 .35rem;font-size:1.1rem}
+  .riga-prezzo{display:block;font-size:2rem;font-weight:800;letter-spacing:-0.04em;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.1;margin-bottom:.75rem}
+  .riga-prezzo small{font-size:1rem;font-weight:650;letter-spacing:-0.01em;color:var(--muted)}
+  .voce p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.5}
+  .voce.principale{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .voce.principale .riga-prezzo{color:var(--giallo)}
+  .voce.principale p{color:rgba(255,255,255,.78)}
+  .etichetta{align-self:flex-start;font-size:.8rem;font-weight:700;background:var(--giallo);color:var(--ink);border-radius:999px;padding:.15rem .65rem;margin-bottom:1rem}
+  .voce.principale{grid-column:1/-1}
+  @media (min-width:40rem){
+    .voce.principale{display:grid;grid-template-columns:auto 1fr;column-gap:3rem;align-items:center;padding:2rem}
+    .voce.principale .etichetta,.voce.principale h3,.voce.principale .riga-prezzo{grid-column:1}
+    .voce.principale p{grid-column:2;grid-row:1/span 3;font-size:1.05rem;max-width:26rem}
+    .voce.principale .riga-prezzo{font-size:2.6rem;margin:0}
+  }
+  .nota-listino{margin-top:1.5rem}
+
+  /* ---------- sezioni verticali ---------- */
+  .verticale.attivita{background:var(--bg-soft)}
+  .verticale.strutture{background:var(--bg-caldo)}
+  .occhiello{
+    display:inline-flex;align-items:center;gap:.5rem;margin:0 0 1.25rem;
+    font-size:.92rem;font-weight:650;color:var(--accent);
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;
+  }
+  .strutture .occhiello{color:var(--ocra)}
+  .richiamo{margin-top:1.5rem;background:#fff;border:1.5px solid var(--ink);border-radius:var(--r);padding:1.5rem}
+  .richiamo p{margin:0 0 1rem;font-size:.98rem;line-height:1.5}
+  .richiamo .azioni{margin:0}
+  .tel-medio{font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;color:var(--ink);text-decoration:none;background:linear-gradient(transparent 62%,rgba(240,198,60,.55) 62%)}
+  .tel-medio:hover{color:var(--accent-strong)}
+  .chiaro-su{margin-top:2rem;padding:1.5rem;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
+  .chiaro-su h3{font-size:1.1rem}
+  .chiaro-su p{margin:0;color:var(--muted);font-size:.98rem}
+  .gia-fatto{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:center;margin-top:1.75rem}
+  .gia-fatto img{border-radius:10px;border:1px solid var(--line);aspect-ratio:16/10;object-fit:cover}
+  .gia-fatto p{margin:0;font-weight:600;line-height:1.45}
+
+  /* ---------- pacchetto mensile ---------- */
+  .abbonamento{display:grid;gap:2rem;border-radius:24px;background:#fff;border:1px solid var(--line);padding:1.75rem;box-shadow:0 30px 60px -40px rgba(14,26,28,.35)}
+  @media (min-width:56rem){ .abbonamento{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem;padding:3rem} }
+  .abbonamento .cifra{display:block;font-size:4rem;font-weight:800;letter-spacing:-0.05em;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;margin-top:1.5rem}
+  .abbonamento .cifra small{font-size:1.1rem;font-weight:650;letter-spacing:-0.01em;color:var(--muted)}
+  .abbonamento .spunte{margin:0}
+
+  /* ---------- lavori ---------- */
+  .lavoro-primo{display:grid;gap:2rem;align-items:center}
+  @media (min-width:56rem){ .lavoro-primo{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:4rem} }
+  .dove{font-size:.92rem;color:var(--muted);margin:0 0 .9rem}
+  .lavoro-primo h3{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+  .lavoro-primo h3 a{color:var(--ink);text-decoration-color:var(--line)}
+  .lavoro-primo h3 a:hover{text-decoration-color:var(--accent)}
+  .tag{list-style:none;padding:0;margin:1.25rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+  .tag li{font-size:.85rem;font-weight:600;background:var(--accent-soft);color:var(--accent-strong);border-radius:999px;padding:.25rem .8rem}
+
+  /* ---------- chi sono ---------- */
+  .scheda{margin:0;border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+  .scheda div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:1rem 1.25rem;border-top:1px solid var(--line)}
+  .scheda div:first-child{border-top:0}
+  .scheda dt{font-size:.9rem;color:var(--muted)}
+  .scheda dd{margin:0;font-weight:600}
+  @media (max-width:26rem){ .scheda div{grid-template-columns:1fr;gap:.1rem} }
+
+  /* ---------- contatti ---------- */
+  .scuro{background:var(--ink);color:#fff}
+  .scuro .lead{color:rgba(255,255,255,.75)}
+  .scuro a:not(.btn){color:var(--giallo)}
+  .tel-grande{
+    display:inline-block;font-size:clamp(2.3rem,7vw,4.5rem);font-weight:800;letter-spacing:-0.045em;
+    color:#fff !important;text-decoration:none;margin:1rem 0 .5rem;font-variant-numeric:tabular-nums;line-height:1.05;
+    background:linear-gradient(transparent 70%,rgba(240,198,60,.45) 70%);
+  }
+  .tel-grande:hover{color:var(--giallo) !important}
+  .contatti dl{display:grid;gap:1.25rem;margin:3rem 0 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.14)}
+  @media (min-width:48rem){ .contatti dl{grid-template-columns:repeat(3,1fr);gap:2rem} }
+  .contatti dt{font-size:.88rem;color:rgba(255,255,255,.62)}
+  .contatti dd{margin:.15rem 0 0;font-weight:600}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.62);padding:0 0 3rem;font-size:.9rem}
+  footer .wrap > div{border-top:1px solid rgba(255,255,255,.14);padding-top:1.5rem}
+  footer a{color:rgba(255,255,255,.8)}
+  footer p{margin:0 0 .5rem}
+  .da-completare{background:var(--giallo);color:var(--ink);padding:0 .3rem;font-weight:700;border-bottom:2px dashed #6b5300}
+
+  /* ---------- barra fissa mobile ---------- */
+  .barra-bassa{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;
+    display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem;
+    background:rgba(255,255,255,.94);border-top:1px solid var(--line);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));
+  }
+  .barra-bassa a{
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.85rem .5rem;font-weight:650;text-decoration:none;border-radius:999px;font-size:1rem;
+  }
+  .barra-bassa .wa{background:var(--accent);color:#fff}
+  .barra-bassa .tel{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  @media (min-width:56rem){ .barra-bassa{display:none} }
+
+  /* ---------- comparsa allo scorrimento (solo se lo script è attivo) ---------- */
+  .anima [data-anima]{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--ritardo,0s)}
+  .anima [data-anima].visibile{opacity:1;transform:none}
+  .anima .hero-vetrina[data-anima]{transform:translateY(24px) rotate(0deg)}
+  .anima .hero-vetrina[data-anima].visibile{transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none !important}
+    .btn:hover,.voce:hover,a.browser:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.62 4.17 3.68.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.47-.28z"/></symbol>
+</svg>
+
+<a class="skip" href="#contatti">Vai ai contatti</a>
+
+<header class="barra-alta">
+  <div class="wrap">
+    <a class="marchio" href="#main"><span class="logo" aria-hidden="true">R</span>RDC Solutions</a>
+    <nav aria-label="Sezioni della pagina">
+      <a href="#attivita">Attività</a>
+      <a href="#strutture">Strutture</a>
+      <a href="#prezzi">Prezzi</a>
+      <a href="#lavori">Lavoro</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="pillola" data-anima>Roma · a domicilio e da remoto</p>
+      <h1 data-anima style="--ritardo:.05s">Risolvo i problemi tecnologici che ti fanno perdere <span class="ev">tempo e clienti.</span></h1>
+      <p class="lead" data-anima style="--ritardo:.12s">Quello che rifai a mano ogni mese, lo automatizzo. Lavoro con ristoranti, negozi, studi e piccole imprese, con B&amp;B e case vacanza di Roma, e con privati.</p>
+
+      <div class="azioni" data-anima style="--ritardo:.2s">
+        <a class="btn btn-wa" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Scrivimi su WhatsApp</a>
+        <a class="btn btn-tel" href="tel:+393522010159">Chiama 352 201 0159</a>
+      </div>
+
+      <ul class="fatti" data-anima style="--ritardo:.28s">
+        <li><b>250 €</b><span>audit digitale</span></li>
+        <li><b>90 min</b><span>sul posto</span></li>
+        <li><b>3 giorni</b><span>per la relazione scritta</span></li>
+      </ul>
+    </div>
+
+    <figure class="hero-vetrina" data-anima style="--ritardo:.2s;margin:0">
+      <a class="browser" href="https://unicumcollection.com" target="_blank" rel="noopener" aria-label="Unicum Collection, sito online: apri in una nuova scheda">
+        <div class="browser-barra" aria-hidden="true"><i></i><i></i><i></i><span>unicumcollection.com</span></div>
+        <img src="img/unicum-1200.webp" srcset="img/unicum-720.webp 720w, img/unicum-1200.webp 1200w" sizes="(min-width:60rem) 34rem, 100vw" width="1200" height="675" alt="La pagina iniziale del sito di Unicum Collection: un corridoio bianco con porte a pannelli e il logo della struttura." fetchpriority="high">
+      </a>
+      <div class="scheda-audit">
+        <p><strong>Ultimo lavoro pubblicato</strong>Unicum Collection, Trastevere: sito, dominio ed email aziendali.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap duo">
+    <div class="fisso">
+      <h2 data-anima>Ti suona familiare?</h2>
+      <p class="chiusura" data-anima>Nessuno di questi problemi è urgente. Tutti insieme ti costano ore ogni mese, e ogni tanto un cliente.</p>
+    </div>
+    <ol class="problemi" data-anima>
+      <li>Il sito l'ha fatto una persona che adesso non risponde più, e per cambiare una riga non sai a chi rivolgerti.</li>
+      <li>Non sai a chi sono intestati il dominio e l'hosting, né chi ha le password.</li>
+      <li>Su Google compaiono un orario sbagliato o un numero che non usi più.</li>
+      <li>Ti hanno detto che il backup c'è. Nessuno ha mai provato a rimetterlo al suo posto.</li>
+      <li>Ogni mese rifai a mano le stesse operazioni: ricopiare, sistemare, correggere. Sempre le stesse.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="audit" id="audit">
+  <div class="wrap duo">
+    <div class="fisso" data-anima>
+      <h2>L'audit digitale</h2>
+      <p class="lead">Vengo da te, guardo come funzionano davvero le cose, e ti lascio scritto cosa c'è da fare e quanto costa.</p>
+      <div class="prezzo-grande">
+        <span class="cifra">250</span>
+        <span class="val">€ una tantum</span>
+      </div>
+      <p class="small">Circa 90 minuti sul posto. Relazione scritta entro 3 giorni lavorativi.</p>
+      <div class="azioni">
+        <a class="btn btn-giallo" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20vorrei%20prenotare%20l%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener">Prenota l'audit su WhatsApp</a>
+        <a class="btn btn-chiaro" href="tel:+393522010159">Chiama 352 201 0159</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="pannello" data-anima>
+        <h3>Cosa controllo</h3>
+        <ul class="spunte">
+          <li>Dominio, hosting, caselle email e account: a chi sono intestati, quando scadono, chi ha le password.</li>
+          <li>Come appari su Google: dati, orari, recensioni rimaste senza risposta.</li>
+          <li>Il backup: se esiste e se si riesce davvero a rimetterlo.</li>
+          <li>Le operazioni che rifai a mano ogni mese, e quanto tempo ti portano via.</li>
+          <li>Il sito, se c'è: quanto ci mette ad aprirsi dal telefono e se puoi aggiornarlo senza chiamare nessuno.</li>
+          <li>Dove servono, i calendari delle prenotazioni e gli export del gestionale.</li>
+        </ul>
+      </div>
+      <div class="pannello chiaro" data-anima>
+        <h3>Cosa ti consegno</h3>
+        <ul class="spunte verdi">
+          <li>Un documento in italiano comprensibile, senza sigle.</li>
+          <li>Per ogni problema: quanto ti costa oggi, quanto costa sistemarlo, in che ordine conviene partire.</li>
+          <li>L'elenco di domini, account, email e scadenze, con le intestazioni. Resta a te.</li>
+        </ul>
+        <p style="margin:1.25rem 0 0;font-weight:600">Il documento è tuo. Puoi darlo a chiunque: non sei obbligato a far fare i lavori a me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prezzi">
+  <div class="wrap">
+    <div class="testa" data-anima>
+      <h2>Servizi e prezzi</h2>
+      <p class="lead">Prezzi di partenza. Prima di iniziare ti dico la cifra esatta, e quella resta.</p>
+    </div>
+
+    <div class="listino">
+      <div class="voce principale" data-anima>
+        <span class="etichetta">Si parte da qui</span>
+        <h3>Audit digitale</h3>
+        <span class="riga-prezzo">250 €</span>
+        <p>90 minuti sul posto, relazione scritta in 3 giorni lavorativi.</p>
+      </div>
+      <div class="voce" data-anima style="--ritardo:.05s">
+        <h3>Uscita a domicilio</h3>
+        <span class="riga-prezzo">70 € <small>prima ora</small></span>
+        <p>A Roma città. Le ore successive 45 € l'una.</p>
+      </div>
+      <div class="voce" data-anima style="--ritardo:.1s">
+        <h3>Consulenza da remoto</h3>
+        <span class="riga-prezzo">45 € <small>45 minuti</small></span>
+        <p>Basta un telefono o un computer collegato.</p>
+      </div>
+      <div class="voce" data-anima>
+        <h3>Profilo Google</h3>
+        <span class="riga-prezzo">300 €</span>
+        <p>Scheda completa e corretta: dati, orari, foto, mappa, categorie. Ti lascio scritto come aggiornarla da solo.</p>
+      </div>
+      <div class="voce" data-anima style="--ritardo:.05s">
+        <h3>Sincronizzazione calendari</h3>
+        <span class="riga-prezzo"><small>da</small> 400 €</span>
+        <p>Portali e prenotazioni dirette che si parlano, così smetti di tenere camere bloccate per sicurezza.</p>
+      </div>
+      <div class="voce" data-anima style="--ritardo:.1s">
+        <h3>Sito vetrina, una pagina</h3>
+        <span class="riga-prezzo"><small>da</small> 900 €</span>
+        <p>Si legge bene dal telefono, raccoglie richieste dirette. Dominio ed email intestati a te.</p>
+      </div>
+      <div class="voce" data-anima>
+        <h3>Automazioni su misura</h3>
+        <span class="riga-prezzo"><small>da</small> 600 €</span>
+        <p>Quando il programma che ti servirebbe non esiste, lo scrivo io. Il prezzo dipende da quante ore al mese ti restituisce.</p>
+      </div>
+    </div>
+    <p class="small nota-listino">Prezzi netti. <span class="da-completare">DA COMPLETARE: regime fiscale e IVA</span></p>
+  </div>
+</section>
+
+<section class="verticale attivita" id="attivita">
+  <div class="wrap duo">
+    <div class="fisso" data-anima>
+      <p class="occhiello">Per ristoranti, bar, negozi e studi</p>
+      <h2>Il tempo che perdi non è sul lavoro. È intorno al lavoro.</h2>
+      <p class="lead">Da 1 a 10 persone, senza nessuno che segua la parte tecnica. Ti dico cosa si può togliere di mezzo e quanto costa toglierlo.</p>
+      <p class="chiusura">Ho lavorato nella ristorazione. So come funziona un turno, non solo come funziona un computer.</p>
+    </div>
+
+    <div>
+      <ol class="problemi" data-anima>
+        <li>Ordini e magazzino girano a voce e su foglietti, e a fine mese nessuno sa più cosa è entrato davvero.</li>
+        <li>L'export del gestionale va risistemato a mano ogni mese prima di passarlo al commercialista.</li>
+        <li>Gli ordini arrivano nelle chat di WhatsApp e qualcuno si perde tra un messaggio e l'altro.</li>
+        <li>Per cambiare un piatto o un prezzo sul menu devi richiamare chi ha fatto il sito, e aspettare.</li>
+        <li>Le recensioni restano lì. Nessuno risponde, e si vede.</li>
+      </ol>
+
+      <div class="richiamo" data-anima>
+        <p><strong>Roberto Di Castro — RDC Solutions.</strong> Supporto tecnologico e automazioni a Roma, a domicilio e da remoto. Si parte dall'audit digitale: 250 €, 90 minuti, relazione scritta in 3 giorni lavorativi.</p>
+        <p><a class="tel-medio" href="tel:+393522010159">352 201 0159</a></p>
+        <div class="azioni">
+          <a class="btn btn-wa" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20ho%20un%27attivit%C3%A0%20a%20Roma%20e%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Scrivimi su WhatsApp</a>
+          <a class="btn btn-tel" href="#prezzi">Vedi tutti i prezzi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="verticale strutture" id="strutture">
+  <div class="wrap duo">
+    <div class="fisso" data-anima>
+      <p class="occhiello">Per B&amp;B, affittacamere e case vacanza</p>
+      <h2>Da 2 a 8 camere, gestite in famiglia. La parte tecnica la seguo io.</h2>
+      <p class="lead">Lavoro con strutture di Roma. Ho già fatto il sito e configurato dominio ed email di una struttura a Trastevere.</p>
+      <a class="gia-fatto" href="https://unicumcollection.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
+        <img src="img/unicum-720.webp" width="720" height="405" alt="" loading="lazy">
+        <p><span style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">Unicum Collection</span>, suite ricettive a Trastevere: sito, dominio ed email aziendali configurati da me.</p>
+      </a>
+    </div>
+
+    <div>
+      <ol class="problemi" data-anima>
+        <li>Nella camera in fondo il Wi-Fi non prende. Gli ospiti non te lo dicono in faccia, lo scrivono nella recensione.</li>
+        <li>Booking, Airbnb e le prenotazioni dirette non si parlano. Una volta hai rischiato l'overbooking, e adesso tieni camere bloccate per sicurezza.</li>
+        <li>A ogni arrivo raccogli e ricopi a mano gli stessi dati degli ospiti.</li>
+        <li>Su Google la struttura ha orari o informazioni sbagliate, e nessuno sa come si cambiano.</li>
+        <li>Le recensioni restano senza risposta, comprese quelle a cui basterebbe una riga.</li>
+      </ol>
+
+      <div class="chiaro-su" data-anima>
+        <h3>Sui dati degli ospiti, per essere chiari</h3>
+        <p>Automatizzo la raccolta dei dati prima dell'arrivo e preparo i file già pronti da inviare. L'invio ai portali della Pubblica Amministrazione resta un tuo passaggio: quello non lo automatizzo.</p>
+      </div>
+
+      <div class="richiamo" data-anima>
+        <p><strong>Roberto Di Castro — RDC Solutions.</strong> Supporto tecnologico e automazioni a Roma, a domicilio e da remoto. Si parte dall'audit digitale: 250 €, 90 minuti, relazione scritta in 3 giorni lavorativi.</p>
+        <p><a class="tel-medio" href="tel:+393522010159">352 201 0159</a></p>
+        <div class="azioni">
+          <a class="btn btn-wa" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20ho%20una%20struttura%20ricettiva%20a%20Roma%20e%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Scrivimi su WhatsApp</a>
+          <a class="btn btn-tel" href="#prezzi">Vedi tutti i prezzi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fondo-soft">
+  <div class="wrap">
+    <div class="abbonamento" data-anima>
+      <div>
+        <h2>Se preferisci non pensarci più</h2>
+        <p class="lead">Un riferimento fisso, invece di cercare qualcuno di diverso ogni volta che si rompe qualcosa.</p>
+        <span class="cifra">150 <small>€ al mese</small></span>
+      </div>
+      <ul class="spunte verdi">
+        <li>Fino a 4 richieste da remoto al mese, risposta entro 24 ore nei giorni feriali.</li>
+        <li>Una visita in sede a trimestre compresa. Le altre a 50 € invece di 70 €.</li>
+        <li>Controllo mensile del profilo Google, del backup e, dove ci sono, dei calendari prenotazioni.</li>
+        <li>Gestione delle scadenze di dominio, hosting e licenze: te le ricordo io prima che scadano.</li>
+        <li>Disdetta con 30 giorni di preavviso.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lavori">
+  <div class="wrap">
+    <div class="testa" data-anima>
+      <h2>L'ultimo lavoro</h2>
+    </div>
+
+    <article class="lavoro-primo">
+      <a class="browser" href="https://unicumcollection.com" target="_blank" rel="noopener" data-anima aria-label="Unicum Collection: apri il sito in una nuova scheda">
+        <div class="browser-barra" aria-hidden="true"><i></i><i></i><i></i><span>unicumcollection.com</span></div>
+        <img src="img/unicum-1200.webp" srcset="img/unicum-720.webp 720w, img/unicum-1200.webp 1200w" sizes="(min-width:56rem) 40rem, 100vw" width="1200" height="675" alt="La pagina iniziale del sito di Unicum Collection." loading="lazy">
+      </a>
+      <div data-anima style="--ritardo:.1s">
+        <p class="dove">Suite ricettive, Roma — zona Trastevere</p>
+        <h3><a href="https://unicumcollection.com" target="_blank" rel="noopener">Unicum Collection</a></h3>
+        <p>Ho costruito il sito e configurato dominio ed email aziendali. Oggi la struttura ha una presenza online propria e un indirizzo email con il suo nome: gli ospiti possono trovarla e scriverle senza passare dai portali.</p>
+        <ul class="tag" aria-label="Cosa ho fatto">
+          <li>Sito</li><li>Dominio</li><li>Email aziendali</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="fondo-soft">
+  <div class="wrap duo">
+    <div data-anima>
+      <h2>Chi sono</h2>
+      <p>Mi chiamo Roberto Di Castro e scrivo software: siti, gestionali, collegamenti tra sistemi che non si parlano.</p>
+      <p>Prima del software ho lavorato nella ristorazione e nella sanità. Lì ho imparato cosa succede quando un dato è sbagliato o una procedura si inceppa: il problema non resta nel computer, arriva al cliente.</p>
+      <p>Per questo non mi fermo a sistemare quello che c'è. Se lo strumento che ti servirebbe non esiste, te lo costruisco: è la differenza tra me e un tecnico informatico.</p>
+    </div>
+    <dl class="scheda" data-anima style="--ritardo:.1s">
+      <div><dt>Mestiere</dt><dd>Sviluppatore software</dd></div>
+      <div><dt>Prima</dt><dd>Ristorazione e sanità</dd></div>
+      <div><dt>Dove lavoro</dt><dd>Roma, a domicilio, e da remoto</dd></div>
+      <div><dt>Lingue</dt><dd>Italiano e spagnolo. L'inglese mi basta per gli scambi scritti con i clienti stranieri.</dd></div>
+      <div><dt>Codice</dt><dd><a href="https://github.com/Robys93" target="_blank" rel="noopener">github.com/Robys93</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="scuro contatti" id="contatti">
+  <div class="wrap">
+    <div data-anima>
+      <h2>Parliamone</h2>
+      <p class="lead">Dimmi che attività hai e cosa ti fa perdere più tempo. Ti dico se l'audit ha senso per te oppure no.</p>
+      <a class="tel-grande" href="tel:+393522010159">352 201 0159</a>
+      <div class="azioni">
+        <a class="btn btn-giallo" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="20" height="20" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>Scrivimi su WhatsApp</a>
+      </div>
+    </div>
+
+    <dl>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:rdcsolutions.tech@gmail.com">rdcsolutions.tech@gmail.com</a></dd>
+      </div>
+      <div>
+        <dt>Zona servita</dt>
+        <dd>Roma città, a domicilio. Da remoto, ovunque.</dd>
+      </div>
+      <div>
+        <dt>Tempi di risposta</dt>
+        <dd>Rispondo entro 24 ore nei giorni feriali.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap"><div>
+    <p>RDC Solutions — Roberto Di Castro · Roma · <a href="tel:+393522010159">352 201 0159</a> · <a href="mailto:rdcsolutions.tech@gmail.com">rdcsolutions.tech@gmail.com</a></p>
+    <!-- DA COMPLETARE: inserire qui la partita IVA appena aperta, sostituendo la riga sotto. -->
+    <p><span class="da-completare">DA COMPLETARE: partita IVA</span></p>
+    <p>Questa pagina non usa cookie, non ha moduli e non raccoglie dati dei visitatori.</p>
+  </div></div>
+</footer>
+
+<nav class="barra-bassa" aria-label="Contatti rapidi">
+  <a class="wa" href="https://wa.me/393522010159?text=Ciao%20Roberto%2C%20vorrei%20informazioni%20sull%27audit%20digitale%20da%20250%20euro." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true" focusable="false"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="tel" href="tel:+393522010159">Chiama</a>
+</nav>
+
+</body>
+</html>
