@@ -28,9 +28,8 @@ aperte in `DA-COMPLETARE.md`.
   Web Developer – Programmatore informatico", Istituto G. Meschini, 540 ore,
   esame con commissione Regione Lazio il 04/02/2026. Corsi Profession AI con
   link di verifica: Agenti AI Foundation (12 ore), Programmazione con Python
-  (12 ore), Fondamenti di Machine Learning (8 ore). L'anno dei corsi Profession
-  AI non è sui certificati: non scriverlo finché Roberto non lo dice. Non
-  pubblicare voti, data o luogo di nascita.
+  (12 ore), Fondamenti di Machine Learning (8 ore), tutti del 2026 (confermato
+  da Roberto). Non pubblicare voti, data o luogo di nascita.
 
 ## Prezzi (tutti in chiaro, mai "su richiesta")
 
