@@ -21,7 +21,16 @@ aperte in `DA-COMPLETARE.md`.
   specializzato.
 - NON citare EventPro né Eleonora Inverno: non sono stati completati (tolti
   dalla pagina il 19/09/2026 su richiesta di Roberto).
-- Partita IVA: non ancora aperta. Nel footer resta segnalata come da completare.
+- Partita IVA: non ancora aperta. Per ora lavora con ricevuta per prestazione
+  occasionale (scritto nel footer e sotto il listino). Non scrivere diciture
+  fiscali a memoria: vanno dal commercialista.
+- Formazione (sezione `#certificazioni`): attestato di qualifica "Full Stack
+  Web Developer – Programmatore informatico", Istituto G. Meschini, 540 ore,
+  esame con commissione Regione Lazio il 04/02/2026. Corsi Profession AI con
+  link di verifica: Agenti AI Foundation (12 ore), Programmazione con Python
+  (12 ore), Fondamenti di Machine Learning (8 ore). L'anno dei corsi Profession
+  AI non è sui certificati: non scriverlo finché Roberto non lo dice. Non
+  pubblicare voti, data o luogo di nascita.
 
 ## Prezzi (tutti in chiaro, mai "su richiesta")
 
@@ -73,7 +82,8 @@ e che quando serve costruisce quello che non esiste.
   `sito/img/` (webp, file locali) e un solo script locale, `animazioni.js`, per
   far comparire le sezioni allo scorrimento. Lo script rispetta "riduci
   animazioni" e, se non parte, la pagina resta visibile. Il CSP in `_headers`
-  permette solo `script-src 'self'`. Font esterni: no (scelta sua).
+  permette solo `script-src 'self'` e `font-src 'self'`. Caratteri: file
+  locali in `sito/fonts/`, mai chiamate a Google Fonts.
 - Nessun modulo di contatto, nessuna statistica, nessun cookie.
 - Mobile first. Accessibile: contrasto, focus visibile, heading corretti.
 - Ancore stabili `#attivita` e `#strutture` (destinazioni dei QR code): devono
@@ -85,30 +95,32 @@ e che quando serve costruisce quello che non esiste.
 
 ## Direzione visiva scelta
 
-"Chiaro e moderno", scelta da Roberto il 19/09/2026 dopo aver bocciato la
-versione precedente ("listino, non brochure": troppo spoglia, sembrava un
-documento). Il sito è il suo biglietto da visita e deve far vedere che sa
+"v3", scelta da Roberto il 21-22/09/2026 in Claude Design dopo aver bocciato
+"chiaro e moderno" (colori ottanio/giallo giudicati brutti, poco movimento,
+logo non suo). Il sito è il suo biglietto da visita e deve far vedere che sa
 costruire le cose.
 
-- Fondo bianco, sezioni alternate su `#F4F7F6` (attività) e `#FBF7EC`
-  (strutture). Inchiostro `#0E1A1C`, ottanio `#0B5750` per azioni e cifre,
-  giallo `#F0C63C` per le cifre su fondo scuro e per l'evidenza, ocra
-  `#8A6A00` per la verticale strutture.
-- Titoli grandi e compatti, font di sistema. Bottoni a pillola. Angoli
-  arrotondati, bordi sottili, ombre solo sulle cornici degli screenshot.
+- Fondo grafite `#070C18`, sezioni chiare su `#F5F7FA` (audit, verticali,
+  certificazioni). Blu elettrico `#053BF6` e navy `#0D2C54` del marchio,
+  azzurro `#2BB3E8` come secondo accento, gradiente blu→azzurro per azioni e
+  cifre. Niente ottanio, niente giallo.
+- Caratteri: Space Grotesk (titoli), Manrope (testo), JetBrains Mono
+  (etichette).
+- Movimento: pannello "audit in corso" in testata, striscia di servizi che
+  scorre, contatori, comparsa allo scorrimento, barra di lettura.
 - Su computer due colonne (titolo fisso a sinistra, contenuto a destra): lo
   spazio non resta vuoto.
-- Il lavoro per Unicum Collection è mostrato in una cornice da browser nella
-  testata e nella sezione "L'ultimo lavoro" (`#lavori`). Logo: quadrato ottanio con "R" e
-  una fascia gialla (anche favicon e icona per la schermata home).
+- Logo: il wordmark di Roberto (`sito/logo-rdc-chiaro.svg` su fondo scuro,
+  `sito/logo-rdc.svg` su fondo chiaro). Favicon e icona per la schermata home:
+  la "R" del logo su quadrato navy.
 - Da evitare: pagina che sembra un documento di testo, colonna stretta con
   metà schermo vuoto, card identiche con ombra pesante, frecce nei bottoni.
 
-## Stato al 19 settembre 2026
+## Stato al 24 settembre 2026
 
-- Pagina ridisegnata il 19/09/2026 (direzione "chiaro e moderno") e
-  ricontrollata: nessuna parola vietata, nessuna risorsa esterna, heading in
-  ordine, testi e prezzi invariati.
+- Pagina ridisegnata con la direzione "v3" (PR #1): testi e prezzi invariati,
+  nessuna risorsa esterna. Certificazioni e nota fiscale compilate il
+  24/09/2026.
 - Roberto sta completando la lista in `DA-COMPLETARE.md`. Punto aperto da
   chiarire con lui: il numero 347 196 8618, che ha fornito senza dire cos'è.
   Non è in pagina.

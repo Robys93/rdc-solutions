@@ -227,7 +227,6 @@
   .voce.principale .prezzo{font-size:2.2rem;background:var(--grad-testo);-webkit-background-clip:text;background-clip:text;color:transparent}
   .etichetta{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--grad);color:#fff;border-radius:.3rem;padding:.22rem .5rem;margin-left:.75rem}
   .nota-listino{margin-top:1.5rem;font-size:.92rem;color:var(--muted)}
-  .da-completare{background:var(--blu);color:#fff;padding:.05rem .35rem;border-radius:.25rem;font-weight:700}
 
   /* ---------- sezioni verticali ---------- */
   .verticali{display:grid;gap:1.25rem;align-items:start;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
@@ -280,11 +279,15 @@
   .tag li{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.06em;background:rgba(5,59,246,.18);color:#9FBBFF;border:1px solid rgba(5,59,246,.4);border-radius:.4rem;padding:.3rem .7rem}
 
   /* ---------- certificazioni ---------- */
-  .certificazioni-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
-  .certificazione{border:1.5px dashed rgba(5,59,246,.55);border-radius:1.1rem;padding:1.6rem;background:rgba(255,255,255,.6)}
-  .certificazione .da-completare{display:inline-block;margin-bottom:1rem}
-  .certificazione h3{margin:0 0 .4rem;font-size:1.1rem}
+  .certificazioni-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr))}
+  .certificazione{display:flex;flex-direction:column;border:1px solid var(--line-paper);border-radius:1.1rem;padding:1.6rem;background:#fff}
+  .certificazione.principale{background:var(--navy);color:var(--ink);border-color:transparent}
+  .certificazione .ente{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blu);margin-bottom:1rem}
+  .certificazione.principale .ente{color:var(--ciano-chiaro)}
+  .certificazione h3{margin:0 0 .5rem;font-size:1.1rem}
   .certificazione p{margin:0;color:var(--muted-3);font-size:.96rem;line-height:1.5}
+  .certificazione.principale p{color:#CBD5E3}
+  .certificazione .verifica{margin-top:auto;padding-top:1.1rem;font-size:.92rem;font-weight:700}
 
   /* ---------- chi sono ---------- */
   .scheda-bio{margin:0;border:1px solid var(--line);border-radius:1.1rem;background:rgba(255,255,255,.03);overflow:hidden}
@@ -544,7 +547,7 @@
         <span class="prezzo"><small>da</small> 600 €</span>
       </li>
     </ul>
-    <p class="nota-listino">Prezzi netti. <span class="da-completare">DA COMPLETARE: regime fiscale e IVA</span></p>
+    <p class="nota-listino">Prezzi netti. Per ora lavoro con ricevuta per prestazione occasionale, senza partita IVA: ai prezzi non si aggiunge l'IVA.</p>
   </div>
 </section>
 
@@ -635,24 +638,32 @@
 
 <section id="certificazioni" class="paper">
   <div class="wrap">
-    <p class="occhiello" data-anima>Da completare</p>
+    <p class="occhiello" data-anima>Formazione</p>
     <h2 data-anima style="--ritardo:.06s">Certificazioni e titoli</h2>
-    <p class="lead" data-anima style="--ritardo:.1s;margin-bottom:2.5rem">Tre spazi da riempire con titoli veri: nome esatto, ente che lo rilascia, anno. Se una casella resta senza un titolo reale, si toglie.</p>
+    <p class="lead" data-anima style="--ritardo:.1s;margin-bottom:2.5rem">Corsi conclusi, con l'ente che li ha rilasciati e le ore. I tre di Profession AI si verificano online con il codice del certificato.</p>
     <div class="certificazioni-grid">
-      <div class="certificazione" data-anima>
-        <span class="da-completare">DA COMPLETARE</span>
-        <h3>Titolo o certificazione 1</h3>
-        <p>Nome esatto · ente che lo rilascia · anno.</p>
+      <div class="certificazione principale" data-anima>
+        <span class="ente">Istituto G. Meschini · Regione Lazio</span>
+        <h3>Full Stack Web Developer – Programmatore informatico</h3>
+        <p>Attestato di qualifica, 540 ore. Esame finale superato il 4 febbraio 2026 davanti alla commissione della Regione Lazio.</p>
       </div>
       <div class="certificazione" data-anima style="--ritardo:.06s">
-        <span class="da-completare">DA COMPLETARE</span>
-        <h3>Titolo o certificazione 2</h3>
-        <p>Nome esatto · ente che lo rilascia · anno.</p>
+        <span class="ente">Profession AI</span>
+        <h3>Agenti AI Foundation</h3>
+        <p>12 ore. Agenti AI e Agentic AI, componenti di un agente, paradigmi e framework agentici.</p>
+        <a class="verifica" href="https://certify.profession.ai/6a95eb63e6387b2f42781c6c" target="_blank" rel="noopener">Verifica il certificato</a>
       </div>
       <div class="certificazione" data-anima style="--ritardo:.12s">
-        <span class="da-completare">DA COMPLETARE</span>
-        <h3>Titolo o certificazione 3</h3>
-        <p>Nome esatto · ente che lo rilascia · anno.</p>
+        <span class="ente">Profession AI</span>
+        <h3>Programmazione con Python</h3>
+        <p>12 ore. Tipi di dati, collezioni, condizioni e cicli, lavoro sui file, basi di AI per il codice.</p>
+        <a class="verifica" href="https://certify.profession.ai/6a94b1fb0e47d83386837808" target="_blank" rel="noopener">Verifica il certificato</a>
+      </div>
+      <div class="certificazione" data-anima style="--ritardo:.18s">
+        <span class="ente">Profession AI</span>
+        <h3>Fondamenti di Machine Learning</h3>
+        <p>8 ore. Dataset e preparazione dei dati, regressione lineare, overfitting, classificazione.</p>
+        <a class="verifica" href="https://certify.profession.ai/6a9580c4b3afb863b7a1816b" target="_blank" rel="noopener">Verifica il certificato</a>
       </div>
     </div>
   </div>
@@ -699,8 +710,8 @@
 <footer>
   <div class="wrap">
     <p>RDC Solutions — Roberto Di Castro · Roma · <a href="tel:+393522010159">352 201 0159</a> · <a href="mailto:rdcsolutions.tech@gmail.com">rdcsolutions.tech@gmail.com</a></p>
-    <!-- DA COMPLETARE: inserire qui la partita IVA appena aperta, sostituendo la riga sotto. -->
-    <p><span class="da-completare">DA COMPLETARE: partita IVA</span></p>
+    <!-- Quando apri la partita IVA, sostituisci la riga sotto con il numero e aggiorna la nota sotto il listino (#prezzi). -->
+    <p>Lavoro con ricevuta per prestazione occasionale, senza partita IVA.</p>
     <p>Questa pagina non usa cookie, non ha moduli e non raccoglie dati dei visitatori.</p>
   </div>
 </footer>
