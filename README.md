@@ -13,7 +13,9 @@ rdc-solutions/
 ├── DA-COMPLETARE.md     la lista delle cose che mancano, da spuntare
 └── sito/                ← la cartella da trascinare su Netlify
     ├── index.html       la pagina (HTML + CSS in un unico file)
-    ├── animazioni.js    fa comparire le sezioni mentre scorri (facoltativo)
+    ├── animazioni.js    animazioni della pagina (facoltativo)
+    ├── fonts/           i tre caratteri della pagina, in locale
+    ├── logo-rdc*.svg    il logo: -chiaro per fondi scuri, l'altro per fondi chiari
     ├── img/             screenshot del sito di Unicum Collection
     ├── 404.html         pagina mostrata su indirizzi sbagliati
     ├── favicon.svg      icona della scheda del browser
@@ -49,7 +51,8 @@ indicato. Il file è commentato nei punti da completare: cerca `DA COMPLETARE`.
 | Prezzi | cerca `riga-prezzo` | sono le cifre del listino; l'audit compare anche in testata (`fatti`) e nella sezione `audit` |
 | Screenshot dei lavori | cartella `img/` | se un sito cambia aspetto, rifai la schermata e sostituisci i file con lo stesso nome |
 | Prezzo dell'audit | cerca `250` | compare anche nei messaggi WhatsApp precompilati e nei due riquadri delle sezioni verticali |
-| Partita IVA | cerca `DA COMPLETARE: partita IVA` | sostituisci tutta la riga `<p>` |
+| Partita IVA | cerca `prestazione occasionale` | compare nel footer e sotto il listino: quando apri la partita IVA vanno cambiati tutti e due |
+| Certificazioni | cerca `id="certificazioni"` | una scheda per titolo: ente, nome, ore, link di verifica se c'è |
 | Messaggi WhatsApp precompilati | cerca `wa.me/393522010159?text=` | il testo dopo `?text=` è scritto in codice URL: gli spazi sono `%20`, l'apostrofo `%27`, la virgola resta virgola |
 
 ### Attenzione ai messaggi WhatsApp
@@ -84,7 +87,7 @@ stampato punta a un indirizzo che non puoi più cambiare.
 - Apri `sito/index.html` con doppio clic e leggila tutta dal telefono, non solo
   dal computer.
 - Premi il tasto Tab più volte: ogni link deve mostrare un bordo ben visibile
-  (verde su fondo chiaro, giallo su fondo scuro). Se non si vede, qualcosa nel CSS è stato modificato.
+  (blu su fondo chiaro, azzurro su fondo scuro). Se non si vede, qualcosa nel CSS è stato modificato.
 - Tocca i due pulsanti in basso: devono aprire WhatsApp e il telefono.
 - Prova gli indirizzi `.../#attivita` e `.../#strutture`: il titolo della
   sezione non deve finire sotto la barra in alto.

@@ -1,15 +1,19 @@
 # Da completare prima e dopo la pubblicazione
 
-In ordine di impatto. I primi due bloccano la pubblicazione, gli altri no.
+In ordine di impatto.
 
-## Blocca la pubblicazione
+## Fiscale
 
-- [ ] **Partita IVA.** In `sito/index.html`, cerca `DA COMPLETARE: partita IVA`
-      (nel footer) e sostituisci la riga. Finché c'è il riquadro giallo, chi
-      deve pagarti 250 euro ha un dubbio legittimo.
-- [ ] **Regime fiscale e IVA nel listino.** Cerca
-      `DA COMPLETARE: regime fiscale e IVA`, sotto i prezzi. Se apri in
-      forfettario va la dicitura prevista dalla legge: fattela dare dal
+- [x] **Come fatturi.** Per ora ricevuta per prestazione occasionale, senza
+      partita IVA: scritto nel footer e sotto il listino (cerca
+      `prestazione occasionale`).
+- [ ] **Da chiarire col commercialista.** Se il cliente è un'azienda, sulla
+      ricevuta trattiene il 20% di ritenuta d'acconto: i prezzi del listino
+      sono quello che incassi tu o quello che paga il cliente? Oggi c'è
+      scritto "Prezzi netti". E il pacchetto mensile (un servizio che si
+      ripete ogni mese) va bene con la prestazione occasionale?
+- [ ] **Quando apri la partita IVA**, cambia le due righe e, se sei in
+      forfettario, metti la dicitura prevista dalla legge: fattela dare dal
       commercialista, non scriverla a memoria.
 
 ## Prima di stampare qualsiasi cosa
